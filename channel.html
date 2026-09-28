@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Gigglywoo | Kids Songs & Nursery Rhymes</title>
+  
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gigglywoo | Kids Songs & Nursery Rhymes">
+  <meta property="og:description" content="Fun, silly & catchy songs for toddlers! Subscribe for more naughty monkeys, dancing ducks & happy elephants 🐒🦆🐘">
+  <meta property="og:image" content="thumbnail.jpg">
+  <meta property="og:url" content="https://youtube.com/@gigglywoo">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gigglywoo | Kids Songs & Nursery Rhymes">
+  <meta name="twitter:description" content="Fun, silly & catchy songs for toddlers! Subscribe for more naughty monkeys, dancing ducks & happy elephants 🐒🦆🐘">
+  <meta name="twitter:image" content="thumbnail.jpg">
+  
+  <meta name="description" content="Gigglywoo – Fun kids songs and nursery rhymes for toddlers. Watch 3 Naughty Monkeys and more on YouTube!">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(160deg, #fff8e7 0%, #ffe4b5 40%, #ffd1a1 100%);
+      min-height: 100vh;
+      color: #2d2d2d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 16px 40px;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    /* Header */
+    .badge {
+      background: #ff6b35;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.35);
+    }
+    
+    h1 {
+      font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.25;
+      color: #1a1a1a;
+    }
+    
+    .tagline {
+      font-size: 15px;
+      font-weight: 600;
+      color: #555;
+      text-align: center;
+      margin-top: -6px;
+    }
+    
+    /* Thumbnail link */
+    .thumb-link {
+      display: block;
+      width: 100%;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+      background: #000;
+      aspect-ratio: 16 / 9;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .thumb-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    
+    .thumb-link:hover img,
+    .thumb-link:active img {
+      transform: scale(1.03);
+      opacity: 0.92;
+    }
+    
+    /* Play / Subscribe button overlay */
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      background: rgba(255, 0, 0, 0.92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, background 0.2s ease;
+      pointer-events: none;
+    }
+    
+    .thumb-link:hover .play-btn,
+    .thumb-link:active .play-btn {
+      transform: translate(-50%, -50%) scale(1.08);
+      background: #ff0000;
+    }
+    
+    .play-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+      margin-left: 4px;
+    }
+    
+    /* CTA Buttons */
+    .cta-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:active {
+      transform: scale(0.97);
+    }
+    
+    .btn-primary {
+      background: #ff0000;
+      color: white;
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.35);
+    }
+    
+    .btn-primary:hover {
+      background: #e60000;
+      box-shadow: 0 8px 24px rgba(255, 0, 0, 0.4);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: #333;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border: 2px solid #eee;
+    }
+    
+    .btn-secondary:hover {
+      background: #fafafa;
+    }
+    
+    .yt-icon {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    
+    /* Description card */
+    .desc-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+    
+    .desc-card h2 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ff6b35;
+    }
+    
+    .desc-card p {
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: #444;
+    }
+    
+    /* Footer */
+    footer {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+    
+    footer a {
+      color: #ff6b35;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="badge">Kids Channel 🎵</div>
+    
+    <h1>Gigglywoo</h1>
+    
+    <p class="tagline">Fun songs & nursery rhymes for toddlers</p>
+    
+    <!-- Thumbnail → opens channel in YouTube app -->
+    <a href="https://youtube.com/@gigglywoo?si=5Kew1wxrZP0ZIWxt" class="thumb-link" target="_blank" rel="noopener">
+      <img 
+        src="thumbnail.jpg" 
+        alt="Gigglywoo – 3 Naughty Monkeys and more kids songs"
+        width="1280" 
+        height="720"
+        loading="eager">
+      <div class="play-btn" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
+    </a>
+    
+    <!-- CTA Buttons -->
+    <div class="cta-group">
+      <a href="https://youtube.com/@gigglywoo?si=5Kew1wxrZP0ZIWxt" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="yt-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/>
+        </svg>
+        Open Channel on YouTube
+      </a>
+      
+      <a href="https://www.youtube.com/@gigglywoo?sub_confirmation=1" class="btn btn-secondary" target="_blank" rel="noopener">
+        🔔 Subscribe to Gigglywoo
+      </a>
+    </div>
+    
+    <!-- Description -->
+    <div class="desc-card">
+      <h2>About Gigglywoo</h2>
+      <p>Fun, silly & catchy songs for little ones! Join the naughty monkeys, dancing ducks and happy elephants for more giggles and sing-alongs. New videos coming soon 🐒🦆🐘</p>
+    </div>
+    
+    <footer>
+      Made for sharing · <a href="https://youtube.com/@gigglywoo" target="_blank" rel="noopener">youtube.com/@gigglywoo</a>
+    </footer>
+    
+  </div>
+</body>
+</html>
